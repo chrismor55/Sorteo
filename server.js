@@ -27,8 +27,8 @@ async function run() {
 
     // Ruta para registrar usuarios
     app.post('/register', async (req, res) => {
-      const { usuario, email, password } = req.body;
-      const result = await collection.insertOne({ usuario, email, password });
+      const { usuario, email, telefono } = req.body;
+      const result = await collection.insertOne({ usuario, email, telefono });
       res.json(result);
     });
 
