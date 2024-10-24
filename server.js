@@ -38,5 +38,15 @@ async function run() {
     console.error(error);
   }
 }
+app.get('/ganadores', async (req, res) => {
+  try {
+    const ganadores = await collection.find({}).sort({ _id: -1 }).limit(5).toArray();
+    res.json(ganadores);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al obtener los ganadores');
+  }
+});
+
 
 run().catch(console.dir);
