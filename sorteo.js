@@ -152,3 +152,43 @@ function comprobarFecha(){
     }
 }
 setInterval(comprobarFecha, 1000);
+
+
+function setCookie(name,,apellidos,email,telefono, value, days){
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "expires: "+date.toUTCString();
+    console.log(name);
+    console.log(value);
+    console.log(expires);
+    document.cookie= name +apellidos + email + telefono + "=" + value + "/" + expires + ";path=/";
+}
+
+function getCookies(){
+
+}
+
+function deleteCookie(name){
+    document.cookie = name + "=; expires = Fri, 20 Oct 2024 08:40:06 GMT ;path=/";
+}
+
+function checkCookie(){
+
+}
+
+document.getElementById("borrar").addEventListener("click",function(){
+
+    deleteCookie("Username");
+
+});
+
+document.getElementById("form").addEventListener("submit",function(event){
+    event.preventDefault();
+
+    var name = document.getElementById("nombre").value;
+    var apellidos = document.getElementById("apellidos").value;
+    var email = document.getElementById("email").value;
+    var telefono = document.getElementById("telefono").value;
+
+    setCookie("Username",name,2);
+});
