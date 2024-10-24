@@ -56,7 +56,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ usuario: nombre, email, password: contraseña })
+            body: JSON.stringify({ usuario: nombre, email, telefono })
         })
         .then(response => response.json())
         .then(data => {

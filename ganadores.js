@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         ganadores.forEach(ganador => {
             const li = document.createElement('li');
-            li.textContent = `Persona: ${ganador.usuario} ${ganador.email}`; // Aquí puedes ajustar el formato
+            li.textContent = `${ganador.usuario}: ${ganador.email}`; // Aquí puedes ajustar el formato
             listaGanadores.appendChild(li);
         });
     })

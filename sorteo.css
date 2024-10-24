@@ -142,27 +142,53 @@ header {
 margin-left: 70%;
 margin-top: 1%;
 }
-.modal{
+.modal {
     display: none;
     position: fixed; /* Para que cubra toda la pantalla */
-    top: 0;
+    top: 0; /* Ajustar a la parte superior */
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro y transparente */
     justify-content: center;
-    align-items: center;
-    z-index: 1000; /* para que este encima de otros elementos */
+    z-index: 1000; /* para que esté encima de otros elementos */
 }
-.contenido-modal{
-    height: 15%;
-    width: 15%;
-    margin-left: 40%;
-    background-color: #d05252;
-    border-style: solid;
+
+.contenido-modal {
+    width: 300px; /* Definimos un ancho fijo */
+    background-color: #282828; /* Fondo oscuro */
+    border: 2px solid #ff8c00; /* Borde naranja brillante */
     border-radius: 10px;
-    border-color: #7b0000;
     text-align: center;
     padding: 20px;
-    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    position: absolute; /* Cambiar a posición absoluta */
+    top: 20px; /* Ajustar el espacio desde la parte superior */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar para centrar */
+}
+
+.modal span {
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 24px; /* Tamaño del icono de cierre */
+    color: #ff8c00; /* Color del icono de cierre */
+    position: absolute; /* Posición absoluta para colocar en la esquina */
+    top: 10px; 
+    right: 10px; 
+}
+
+h2 {
+    color: #ff8c00;
+    font-family: 'Creepster', cursive; 
+    margin-bottom: 10px;
+}
+
+p {
+    color: #ffffff; 
+    font-family: Arial, sans-serif; 
+    line-height: 1.5; 
+}
+
+.modal span:hover {
+    background-color: #ff6347; 
 }
