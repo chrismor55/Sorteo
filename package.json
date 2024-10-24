@@ -1,7 +1,7 @@
 {
   "name": "google-signin",
   "version": "1.0.0",
-  "main": "Sorteo-1/sorteo.js",
+  "main": "sorteo.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
