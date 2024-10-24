@@ -154,7 +154,7 @@ function comprobarFecha(){
 setInterval(comprobarFecha, 1000);
 
 
-function setCookie(name,,apellidos,email,telefono, value, days){
+function setCookie(name,apellidos,email,telefono, value, days){
     var date = new Date();
     date.setTime(date.getTime()+(days*24*60*60*1000));
     var expires = "expires: "+date.toUTCString();
@@ -190,5 +190,5 @@ document.getElementById("form").addEventListener("submit",function(event){
     var email = document.getElementById("email").value;
     var telefono = document.getElementById("telefono").value;
 
-    setCookie("Username",name,2);
+    setCookie("Username",name,apellidos,email,telefono,2);
 });
