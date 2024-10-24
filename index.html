@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sorteo.css">
+    <title>Document</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4209106137428498"
+     crossorigin="anonymous"></script>
+</head>
+<body onload="comprobarFecha()">
+    <header>
+            <div id="foto">
+                <img id="logo" src="assets/imagen_2024-10-09_105219959-removebg-preview.png" height="200" width="200" >
+                <img src="assets/imagen_2024-10-09_111122822-removebg-preview.png" alt="" height="200" width="275">
+                <img src="assets/calabazas.png" alt="" height="225px" width="425px">
+            </div>
+            <div id="contador" style="font-size: 24px; font-weight: bold;">
+                El sorteo finaliza el 31 de octubre: <span>🎃</span><span id="timer">00:00:00:00</span><span>🎃</span>
+            </div>
+    </header>
+    <div id="premio">
+        <p id="gana">GANA POR HALLOWEEN UNA INCREIBLE 🥳</p>
+        <img src="assets/ps5 pro.png" alt="" height="75" width="350">
+     </div>
+     <div id="ad1">     
+        <img src="assets/cocacola.jpg" alt="" height="285" width="285">
+     </div>
+     <div id="patrocinador">
+        <p id="patro">PATROCINADO POR 😗</p>
+        <img src="assets/play-removebg-preview.png" alt="" height="75" width="375">
+     </div>
+
+     <div id="ad2">
+        <img src="assets/1657978845_espectacular9.jpg" alt="" height="275" width="425">
+     </div>
+    <div id="registro">
+        <form id="form">
+         <div id="du">
+             <img src="assets/14205623.png" height="35px" width="35px">
+
+             <input type="text" id="nombre" placeholder="Nombre">
+         </div>
+
+         <br>
+         
+         <div id="da">
+            <img src="assets/halloween_ghost_scary_icon_151692-removebg-preview.png" height="35px" width="35px">
+
+            <input type="text" id="apellidos" placeholder="Apellidos">
+        </div>
+         
+         <br>
+
+         <div id="de">
+             <img src="assets/murci.png" alt=""  height="35px" width="35px">
+
+             <input type="email" id="email" placeholder="E-Mail">
+         </div>
+         
+         <br>
+
+         <div id="dp">
+             <img src="assets/telefono.png" alt=""  height="35px" width="35px">
+         
+             <input type="text" placeholder="Teléfono" id="telefono">
+             <br>
+            
+             
+         </div>
+
+         <br>
+         <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+         <div id="iniciar">
+             <button type="submit" value="Send Email" id="boton" style="color: black;">Participar</button>
+         </div>
+
+     </form>
+     
+     </div>
+     <div id="modal1" class="modal">
+        <div class="contenido-modal">
+            <p>Se ha registrado con exito</p>
+            <p>Mucha suerte</p>
+            <span id="close">&times;</span>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="contenido-modal">
+            <p>El telefono es incorrecto</p>
+            <span id="close2">&times;</span>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="contenido-modal">
+            <p>El email no es correcto</p>
+            <span id="close3">&times;</span>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="contenido-modal">
+            <p>El nombre solo debe contener letras</p>
+            <span id="close4">&times;</span>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="contenido-modal">
+            <p>Los apellidos solo deben contener letras</p>
+            <span id="close5">&times;</span>
+        </div>
+    </div>
+     <script src="sorteo.js"></script>
+     <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('snl83u6FC2kgKOpFR')
+  </script>
+  <script>
+    (function() {
+      const script = document.createElement('script');
+      script.src = 'https://vercel.com/analytics/script.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  </script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  
+</body>
+</html>
