@@ -1,5 +1,4 @@
 
-/*
 const modal1 = document.getElementById("modal1");
 const modal2 = document.getElementById("modal2");
 const modal3 = document.getElementById("modal3");
@@ -153,4 +152,3 @@ function comprobarFecha(){
     }
 }
 setInterval(comprobarFecha, 1000);
-*/
