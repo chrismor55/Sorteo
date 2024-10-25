@@ -31,7 +31,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     }else if(!email.includes("@") || email==null){
         modal3.style.display = "block"
 
-    }else if (/[a-z]/.test(telefono) || telefono.length >=8  && telefono.length <= 10 ||telefono==null) {
+    }else if (/[a-z]/.test(telefono) || telefono.length <=8  && telefono.length >= 10 ||telefono==null) {
         modal2.style.display = "block";
     } else {
         modal1.style.display = "block";
@@ -71,10 +71,12 @@ document.getElementById('form').addEventListener('submit', function(event) {
 // Manejo de cierre de modales
 closeBtn1.addEventListener("click", function() {
     modal1.style.display = "none";
+    document.getElementById("form").reset();
 });
 window.addEventListener("click", function(event) {
     if (event.target === modal1) {
         modal1.style.display = "none";
+        document.getElementById("form").reset();        
     }
 });
 
@@ -154,14 +156,22 @@ function comprobarFecha(){
 setInterval(comprobarFecha, 1000);
 
 
-function setCookie(name,apellidos,email,telefono, value, days){
+function setCookie(name, days) {
     var date = new Date();
-    date.setTime(date.getTime()+(days*24*60*60*1000));
-    var expires = "expires: "+date.toUTCString();
-    console.log(name);
-    console.log(value);
-    console.log(expires);
-    document.cookie= name +apellidos + email + telefono + "=" + value + "/" + expires + ";path=/";
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + date.toUTCString();
+
+    // Tomamos los valores del formulario para construir el valor de la cookie
+    var nombre = document.getElementById("nombre").value;
+    var apellidos = document.getElementById("apellidos").value;
+    var email = document.getElementById("email").value;
+    var telefono = document.getElementById("telefono").value;
+
+    // Concatenamos los datos del formulario en un solo string para la cookie
+    var cookieValue = `${nombre}|${apellidos}|${email}|${telefono}`;
+
+    // Establecemos la cookie con los datos y el tiempo de expiración
+    document.cookie = name + "=" + cookieValue + "; " + expires + "; path=/";
 }
 
 function getCookies(){
@@ -182,13 +192,8 @@ document.getElementById("borrar").addEventListener("click",function(){
 
 });
 
-document.getElementById("form").addEventListener("submit",function(event){
+document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();
-
-    var name = document.getElementById("nombre").value;
-    var apellidos = document.getElementById("apellidos").value;
-    var email = document.getElementById("email").value;
-    var telefono = document.getElementById("telefono").value;
-
-    setCookie("Username",name,apellidos,email,telefono,2);
+    setCookie("Usuario", 2); // Establece la cookie 'Usuario' por 2 días
+    console.log("Cookie 'Usuario' guardada.");
 });
