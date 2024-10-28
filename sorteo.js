@@ -115,7 +115,7 @@ window.addEventListener("click", function(event) {
 
 //Contador
 // Establecer la fecha objetivo (31 de octubre del año actual)
-const fechaObjetivo = new Date(new Date().getFullYear(), 9, 31, 24, 0, 0); // 9 es octubre (mes 10 - 1)
+const fechaObjetivo = new Date(new Date().getFullYear(), 10, 24, 24, 0, 0); // 10 es noviembre (mes 11 - 1)
 
 // Función para actualizar el contador
 function actualizarContador() {
@@ -147,7 +147,7 @@ let intervalo = setInterval(actualizarContador, 1000);
 
 function comprobarFecha(){
     const fecha = new Date();
-    const limite = new Date('2024-10-31T23:59:59');
+    const limite = new Date('2024-11-24T23:59:59');
 
     if (fecha >= limite) {
         window.location.href="ganadores.html";
@@ -195,5 +195,6 @@ document.getElementById("borrar").addEventListener("click",function(){
 document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();
     setCookie("Usuario", 2); // Establece la cookie 'Usuario' por 2 días
+    checkCookie("Usuario");
     console.log("Cookie 'Usuario' guardada.");
 });
