@@ -99,6 +99,7 @@ header {
 }
 
 #check{
+    font-size: 15px;
     margin: 2%;
     padding: 1%;
     border-style: solid;
