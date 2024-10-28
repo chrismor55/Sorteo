@@ -98,6 +98,17 @@ header {
     border-radius: 10px;
 }
 
+#check{
+    margin: 2%;
+    padding: 1%;
+    border-style: solid;
+    border-color:grey;
+    border-width: 5px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+
 #iniciar{
     margin-left: 24%; 
 }

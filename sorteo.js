@@ -4,6 +4,7 @@ const modal2 = document.getElementById("modal2");
 const modal3 = document.getElementById("modal3");
 const modal4 = document.getElementById("modal4");
 const modal5 = document.getElementById("modal5");
+const modal6 = document.getElementById("modal6");
 
 const btn = document.getElementById("boton");
 const closeBtn1 = document.getElementById("close");
@@ -11,6 +12,7 @@ const closeBtn2 = document.getElementById("close2");
 const closeBtn3 = document.getElementById("close3");
 const closeBtn4 = document.getElementById("close4");
 const closeBtn5 = document.getElementById("close5");
+const closeBtn6 = document.getElementById("close6");
 
 
 
@@ -20,7 +22,8 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
     const apellidos = document.getElementById("apellidos").value;
-    const telefono = document.getElementById("telefono").value;   
+    const telefono = document.getElementById("telefono").value; 
+    const aceptar = document.getElementById("aceptar").checked;  
 
     if(/[1-9]/.test(nombre)||nombre==null){
         modal4.style.display = "block";
@@ -33,7 +36,11 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
     }else if (/[a-z]/.test(telefono) || telefono.length <=8  && telefono.length >= 10 ||telefono==null) {
         modal2.style.display = "block";
-    } else {
+    
+    } else if(aceptar == false){
+        modal6.style.display="block";
+
+    }else {
         modal1.style.display = "block";
 
         //Mandar correo
@@ -110,6 +117,14 @@ closeBtn5.addEventListener("click", function() {
 window.addEventListener("click", function(event) {
     if (event.target === modal5) {
         modal5.style.display = "none";
+    }
+});
+closeBtn6.addEventListener("click", function() {
+    modal6.style.display = "none";
+});
+window.addEventListener("click", function(event) {
+    if (event.target === modal6) {
+        modal6.style.display = "none";
     }
 });
 
